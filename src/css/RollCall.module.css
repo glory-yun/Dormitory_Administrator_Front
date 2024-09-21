@@ -1,0 +1,84 @@
+.Container {
+    text-align: left;
+}
+
+.Title {
+    margin-bottom: 5vh;
+    font-size: 2.3rem;
+}
+
+.Week{
+    width: 15vw;
+    height: 5vh;
+    border: 1px solid grey;
+    border-radius: 0.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4vw;
+}
+
+/* 클릭된 상태일 때 */
+.Active {
+    color: black;
+    font-weight: bold;
+}
+
+/* 클릭되지 않은 상태일 때 */
+.Inactive {
+    color: gray;
+}
+
+
+
+/*  */
+
+.ContentContainer {
+    margin-top: 3vh;
+    height: 65vh;
+    border: 1px solid grey;
+    border-radius: 1rem;
+    overflow-y: hidden;
+
+}
+
+
+
+.Content{
+    height: 7.5vh;
+    border-bottom: 1px solid grey;
+    display: flex;
+    align-items: center;
+    font-size: 1.4vw;
+}
+
+.Content{
+    display: flex;
+}
+
+.Content > div , .wrap > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap{
+    overflow-y: scroll;
+    
+    height: 50vh;
+}
+
+.wrap::-webkit-scrollbar{
+    display: none;
+}
+
+
+.detailButton{
+    cursor: pointer;
+    width: 8vw;
+    height: 5vh;
+    border-radius: 0.5rem;
+    border: 1px solid grey;
+    background-color: white;
+}

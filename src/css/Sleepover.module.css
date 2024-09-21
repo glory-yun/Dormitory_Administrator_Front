@@ -1,0 +1,87 @@
+.Container {
+    text-align: left;
+}
+
+.Title {
+    margin-bottom: 5vh;
+    font-size: 2.3rem;
+}
+
+span {
+    margin-right: 3vw;
+    font-size: 1.4rem;
+    cursor: pointer;
+
+}
+
+
+/* 클릭된 상태일 때 */
+.Active {
+    color: black;
+    font-weight: bold;
+}
+
+/* 클릭되지 않은 상태일 때 */
+.Inactive {
+    color: gray;
+}
+
+
+
+/*  */
+
+.ContentContainer {
+    margin-top: 3vh;
+    height: 65vh;
+    border: 1px solid grey;
+    border-radius: 1rem;
+    overflow-y: hidden;
+
+}
+
+
+
+.Content{
+    height: 7.5vh;
+    border-bottom: 1px solid grey;
+    display: flex;
+    align-items: center;
+    font-size: 1.4vw;
+}
+
+.Content{
+    display: flex;
+}
+
+.Content > div , .wrap > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap{
+    overflow-y: scroll;
+    
+    height: 50vh;
+}
+
+.wrap::-webkit-scrollbar{
+    display: none;
+}
+
+/* button */
+
+.Reject, .Accept{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 0.5rem;
+    margin: 0 1vw 0 1vw;
+    background-color: white;
+    width: 8vw;
+    height: 5vh;
+    font-size: 1.3vw;
+    cursor: pointer;
+}
+

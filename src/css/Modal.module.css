@@ -1,0 +1,120 @@
+/* 모달 배경 */
+.modalBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 불투명한 배경 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* 모달 콘텐츠 */
+.modalContent {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    width: 35vw; /* 원하는 너비 조정 */
+    max-width: 500px; /* 최대 너비 */
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* 모달 제목 */
+.modalTitle {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+/* 모달 정보 */
+.modalInfo {
+    text-align: left;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* 사람 선택 탭 컨테이너 */
+.tabContainer {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+/* 사람 선택 탭 버튼 */
+.tabButton {
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    background-color: transparent;
+    font-size: 0.9rem;
+    color: gray;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+
+/* 활성화된 탭 스타일 */
+.activeTab {
+    color: black;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+}
+
+/* 이미지 컨테이너: 고정 높이와 스크롤 */
+.imageContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2열 */
+    grid-template-rows: repeat(3, 1fr); /* 3행 */
+    gap: 10px; /* 이미지 사이 간격 */
+    width: 100%; /* 그리드의 전체 너비 */
+    max-height: 300px; /* 컨테이너 높이 고정, 스크롤 범위 내에 표시될 높이 */
+    overflow-y: auto; /* 세로 스크롤 활성화 */
+    margin-bottom: 1rem;
+}
+
+/* 이미지 래퍼: 그리드 셀 안에 고정된 크기의 이미지 */
+.imageWrapper {
+    width: 100%;
+    height: 150px; /* 각 이미지 높이 고정 */
+    overflow: hidden; /* 이미지가 영역을 넘으면 숨김 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 이미지 크기 고정 */
+.roomImage {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    object-fit: cover; /* 이미지 비율 유지하며 영역을 채우기 */
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+
+}
+
+/* 닫기 버튼 */
+.closeButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem; /* 이미지 컨테이너 아래에 공간 확보 */
+    align-items: center;
+}
+
+.closeButton:hover {
+    background-color: #0056b3;
+}
