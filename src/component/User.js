@@ -11,10 +11,10 @@ export default function User() {
         // 데이터를 불러오는 비동기 함수
         const fetchUserRequests = async () => {
             try {
-                const response = await axios.get('/admin/students'); // 서버에서 데이터 가져오기
+                const response = await axios.get('http://127.0.0.1:5000/admin/students'); // 서버에서 데이터 가져오기 http://localhost:5000/admin/students'
                 setUserdata(response.data.students); // 전체 데이터를 상태에 저장
                 setFilteredData(response.data.students); // 초기에는 전체 데이터를 필터링 데이터로 설정
-                console.log(response.data.students);
+                
             } catch (err) {
                 console.error('Error fetching student data:', err);
             }

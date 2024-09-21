@@ -26,7 +26,7 @@ export default function RollCall() {
     useEffect(() => {
         const fetchRollCallData = async () => {
             try {
-                const response = await axios.get('/admin/clean_list'); // 서버에서 데이터를 GET 요청
+                const response = await axios.get('http://127.0.0.1:5000/admin/clean_list'); // 서버에서 데이터를 GET 요청
                 groupByRoom(response.data); // 데이터를 CROOM 기준으로 그룹화하여 처리
 
                 

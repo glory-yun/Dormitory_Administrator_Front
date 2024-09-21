@@ -12,7 +12,7 @@ export default function RollCallModal({ modalData, isModalOpen, closeModal, roll
         return null; // 모달이 열려있지 않으면 아무것도 렌더링하지 않음
     }
 
-    console.log(rollcallList.data, '123'); // 콘솔에서 데이터를 확인하기 위함
+
 
     return (
         <div className={styles.modalBackground} onClick={closeModal}>

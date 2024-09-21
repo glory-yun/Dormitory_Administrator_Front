@@ -12,7 +12,7 @@ export default function Sleepover() {
     // 데이터를 다시 불러오기 위한 함수
     const fetchSleepoverRequests = async () => {
         try {
-            const response = await axios.get('/admin/sleepover_requests');
+            const response = await axios.get('http://localhost:5000/admin/sleepover_requests');
             setSleepoverList(response.data.requests);
             const wait = response.data.requests.filter(user => user.CHECK === 0);
             const finish = response.data.requests.filter(user => user.CHECK === 1);
@@ -45,7 +45,7 @@ export default function Sleepover() {
     const handleAccept = async (index, sid) => {
         try {
             // 서버로 POST 요청 보내기
-            await axios.post('/admin/sleepover_approve', {
+            await axios.post('http://127.0.0.1:5000/admin/sleepover_approve', {
                 sid: sid, // 서버로 보낼 데이터
             });
 
@@ -63,25 +63,13 @@ export default function Sleepover() {
     };
 
     // 거절 버튼 클릭 처리 함수
-    const handleReject = async (index, sid) => {
-        try {
-            // 서버로 POST 요청 보내기
-            await axios.post('/admin/sleepover_reject', {
-                sid: sid, // 서버로 보낼 데이터
-            });
+    const handleReject = async (index) => {
 
-            
-            // 데이터 다시 불러옴
-            await fetchSleepoverRequests();
+        let copy = [...decideList];
+        copy[index] = 'reject';
+        setDecideList(copy);
 
-        } catch (error) {
-            console.error('거절 요청 중 오류 발생:', error);
-            // 거절 후 해당 인덱스의 결정 상태를 'reject'로 변경
-            let copy = [...decideList];
-            copy[index] = 'reject';
-            setDecideList(copy);
 
-        }
     };
 
     // 대기중인 사람 목록 보여주기
@@ -119,7 +107,7 @@ export default function Sleepover() {
                                                     <div>❌</div>
                                                     <div>거절</div>
                                                 </div>
-                                                <div className={styles.Accept} onClick={() => handleAccept(i, user.SID)}>
+                                                <div className={styles.Accept} onClick={() => handleAccept(i)}>
                                                     <div>✔️</div>
                                                     <div>수락</div>
                                                 </div>
